@@ -23,7 +23,7 @@ public class Principal {
      */
     
     public static void main(String[] args) {
-        JFrame v=new JFrame("Libreria");
+        JFrame v=new JFrame("Libreria digital");
         VistaPrincipal p=new VistaPrincipal();
         Menu menu=new Menu();
         CtrPrincipal ctrPrincipal=new CtrPrincipal(p,v,menu);
