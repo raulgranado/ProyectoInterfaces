@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<toc version="1.0"> <!--  categoryclosedimage="FolderClosed" categoryopenimage="FolderOpened"  
+topicimage="ItemIco"-->
+        <tocitem text="Ejemplo JavaHelp"    target="aplicacion">
+           	<tocitem text="Ventana principal"    target="principal"/>
+           	<tocitem text="Ventana añadir"    target="annadir"/>
+		<tocitem text="Ventana ver"    target="ver"/>
+        </tocitem>
+</toc>
