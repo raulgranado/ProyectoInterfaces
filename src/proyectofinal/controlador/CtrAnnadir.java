@@ -126,7 +126,7 @@ public class CtrAnnadir implements ActionListener {
                 
              }else{
                 JOptionPane.showMessageDialog(al, "<html>No se ha podido añadir, comprueba que el nombre no este vacío, "
-                        + "<br/>o que has introducido el año correctamente", "Atencion", JOptionPane.WARNING_MESSAGE);
+                        + "<br/>que has introducido el año correctamente o la imagen no está <br/>en la dirección correcta", "Atencion", JOptionPane.WARNING_MESSAGE);
             }
             
             

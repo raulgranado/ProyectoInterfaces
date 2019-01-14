@@ -213,27 +213,27 @@ public class CtrPrincipal extends KeyAdapter implements ActionListener{
         String txt;
         txt=JOptionPane.showInputDialog(v, "Introduzca el nombre:", "Buscar", JOptionPane.INFORMATION_MESSAGE);
         Object[][] libros;
-        
-        try {
+        if(!txt.equals("")){
+            try {
+                AccesoDatos db=new AccesoDatos();
+                libros=db.obtenerBusqueda(opt, txt);
+                db.cerrarConexion();
+                if(libros.length==0){
+                    JOptionPane.showMessageDialog(v, "No se ha encontrado ningun libro", "ERROR", JOptionPane.ERROR_MESSAGE);
 
-            AccesoDatos db=new AccesoDatos();
-            libros=db.obtenerBusqueda(opt, txt);
-            db.cerrarConexion();
-            if(libros.length==0){
-                JOptionPane.showMessageDialog(v, "No se ha encontrado ningun libro", "ERROR", JOptionPane.ERROR_MESSAGE);
-
+                }
+                else{
+                    mostrar(libros);
+                }
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(CtrPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(CtrPrincipal.class.getName()).log(Level.SEVERE, null, ex);
             }
-            else{
-                mostrar(libros);
-            }
-
-
-
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(CtrPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(CtrPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }else{
+            JOptionPane.showConfirmDialog(ventana, "No has introducido nada","Error",JOptionPane.CLOSED_OPTION,JOptionPane.ERROR_MESSAGE);
         }
+        
         
     }
 
